@@ -17,7 +17,7 @@ A modern, responsive portfolio website built with React, TypeScript, Vite, and T
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/modern-portfolio.git
+git clone https://github.com/jiyanshuj/portfolio.git
 cd modern-portfolio
 ```
 
@@ -103,4 +103,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 For questions or feedback, please contact:
 
 - Your Name - your.email@example.com
-- GitHub: [yourusername](https://github.com/yourusername)
+- GitHub: [jiyanshuj](https://github.com/jiyanshuj)
