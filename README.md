@@ -18,7 +18,7 @@ A modern, responsive portfolio website built with React, TypeScript, Vite, and T
 
 ```bash
 git clone https://github.com/jiyanshuj/portfolio.git
-cd modern-portfolio
+cd portfolio
 ```
 
 2. Install dependencies:

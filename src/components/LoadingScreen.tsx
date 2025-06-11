@@ -2,6 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const LoadingScreen: React.FC = () => {
+  // Dynamic Colors Array for Gradient Animation
+  const gradientColors = [
+    'from-pink-500 to-yellow-500',
+    'from-blue-500 to-purple-500',
+    'from-green-400 to-blue-500',
+    'from-indigo-500 to-pink-500',
+  ];
+
   return (
     <motion.div
       initial={{ opacity: 1 }}
@@ -14,7 +22,7 @@ const LoadingScreen: React.FC = () => {
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-blue-400/30 rounded-full"
+            className="absolute w-2 h-2 bg-gradient-to-r from-pink-500 to-yellow-500 opacity-40 rounded-full"
             initial={{
               x: Math.random() * window.innerWidth,
               y: Math.random() * window.innerHeight,
@@ -33,7 +41,7 @@ const LoadingScreen: React.FC = () => {
       </div>
 
       <div className="relative z-10 text-center">
-        {/* Main Logo/Name Animation */}
+        {/* Main Logo/Name Animation with Interactive Gradient */}
         <motion.div
           initial={{ scale: 0.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -41,22 +49,22 @@ const LoadingScreen: React.FC = () => {
           className="mb-8"
         >
           <motion.h1
-            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
+            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent animate-gradient"
             animate={{ 
               backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
             }}
-            transition={{ 
-              duration: 3, 
+            transition={{
+              duration: 5,
               repeat: Infinity,
               ease: "linear"
             }}
             style={{
-              backgroundSize: "200% 200%"
+              backgroundSize: "200% 200%",
             }}
           >
             JJ
           </motion.h1>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -76,22 +84,22 @@ const LoadingScreen: React.FC = () => {
         >
           {/* Outer Ring */}
           <motion.div
-            className="absolute inset-0 border-4 border-blue-200 dark:border-blue-800 rounded-full"
+            className="absolute inset-0 border-4 border-pink-200 dark:border-pink-800 rounded-full"
             animate={{ rotate: 360 }}
             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
           />
-          
+
           {/* Inner Ring */}
           <motion.div
-            className="absolute inset-2 border-4 border-transparent border-t-blue-600 border-r-purple-600 rounded-full"
+            className="absolute inset-2 border-4 border-transparent border-t-yellow-500 border-r-pink-500 rounded-full"
             animate={{ rotate: -360 }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
           />
-          
+
           {/* Center Dot */}
           <motion.div
-            className="absolute inset-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"
-            animate={{ 
+            className="absolute inset-6 bg-gradient-to-r from-pink-500 to-yellow-500 rounded-full"
+            animate={{
               scale: [1, 1.2, 1],
               opacity: [0.7, 1, 0.7]
             }}
@@ -113,11 +121,11 @@ const LoadingScreen: React.FC = () => {
           >
             Loading Portfolio...
           </motion.p>
-          
+
           {/* Progress Bar */}
           <div className="w-48 h-1 bg-gray-200 dark:bg-gray-700 rounded-full mx-auto overflow-hidden">
             <motion.div
-              className="h-full bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"
+              className="h-full bg-gradient-to-r from-pink-500 to-yellow-500 rounded-full"
               initial={{ width: "0%" }}
               animate={{ width: "100%" }}
               transition={{ duration: 2.5, ease: "easeInOut" }}
@@ -130,7 +138,7 @@ const LoadingScreen: React.FC = () => {
           {[...Array(6)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-blue-500/40 rounded-full"
+              className="absolute w-1 h-1 bg-pink-500/40 rounded-full"
               style={{
                 left: `${20 + i * 15}%`,
                 top: `${30 + (i % 2) * 40}%`,
